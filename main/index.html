@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="text/javascript" src='assets/js/accordion.js'></script>
+  <title>Accordion</title>
+</head>
+<body>
+  <h1>Accordion demo page</h1>
+  <div id="my-accordion" class='accordion'></div>
+  
+  <script type="text/javascript">
+    var options = {
+      container: 'my-accordion',
+      mainTitle: 'Main accordion title',
+      panels: [{
+        title: 'My profile',
+        subtitle: 'Update your profile information',
+        content: '<p>Lorem ipsum dolor sit amet, <a href="#somelink">consectetur adipiscing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+      }, {
+        title: 'Change password',
+        subtitle: 'Change your login password',
+        content: '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis</p>'
+      }, {
+        title: 'Another panel',
+        subtitle: '',
+        content: '<p>Ut enim ad minima veniam, <strong>quis nostrum exercitationem</strong> ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>'
+      }]
+    };
+    var accordion = new Accordion(options);
+    accordion.init();
+  </script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
