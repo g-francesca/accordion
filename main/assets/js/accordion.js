@@ -29,7 +29,7 @@ class Accordion {
 
       // create and add title <h3>
       const UI_PanelTitleWrapper = document.createElement('h3');
-      const UI_PanelTitleContent = document.createTextNode('title');
+      const UI_PanelTitleContent = document.createTextNode(title);
       UI_PanelTitleWrapper.appendChild(UI_PanelTitleContent);
 
       // create and add arrow icon
