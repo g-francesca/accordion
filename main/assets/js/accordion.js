@@ -29,8 +29,14 @@ class Accordion {
 
       // create and add title <h3>
       const UI_PanelTitleWrapper = document.createElement('h3');
-      const UI_PanelTitleContent = document.createTextNode(title);
+      const UI_PanelTitleContent = document.createTextNode('title');
       UI_PanelTitleWrapper.appendChild(UI_PanelTitleContent);
+
+      // create and add arrow icon
+      const UI_PanelIcon = document.createElement('i');
+      const UI_PanelIconContent = document.createTextNode('keyboard_arrow_down');
+      UI_PanelIcon.appendChild(UI_PanelIconContent);
+      UI_PanelIcon.classList.add('material-icons');
 
       // create and add content wrapper
       const UI_PanelContentWrapper = document.createElement('div');
@@ -41,6 +47,8 @@ class Accordion {
       const UI_PanelHeaderWrapper = document.createElement('header');
       UI_PanelHeaderWrapper.classList.add('accordion__item__header');
 
+      // append icon
+      UI_PanelHeaderWrapper.appendChild(UI_PanelIcon);
       // append title to its wrapper
       UI_PanelHeaderWrapper.appendChild(UI_PanelTitleWrapper)
       

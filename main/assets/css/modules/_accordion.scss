@@ -23,19 +23,25 @@
   opacity: 0;
   transition: all .3s var(--ease-in-out);
   padding: 0 25px;
-  margin-bottom: 25px;
 }
 
 .accordion__item__header {
-  padding: 25px 25px 0;
+  padding: 25px;
   cursor: pointer;
-
-  h3 {
-    margin-bottom: 12px;
-  }
+  position: relative;
 
   h4 {
     @include ellipsis;
+    margin-top: 12px;
+  }
+
+  .material-icons {
+    position: absolute;
+    right: 25px;
+    transform: rotate(0);
+    transition: all .3s var(--ease-in-out);
+    font-size: 26px;
+    color: var(--color-text-highlight);
   }
 }
 
@@ -46,7 +52,13 @@
 
   .accordion__item__content {
     max-height: 500px;
-    margin-top: 25px;
     opacity: 1;
+    padding-bottom: 25px;
+  }
+
+  .accordion__item__header {
+    .material-icons {
+      transform: rotate3d(1, 0, 0, 180deg);
+    }
   }
 }
