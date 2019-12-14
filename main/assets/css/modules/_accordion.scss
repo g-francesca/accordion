@@ -33,6 +33,10 @@
   h3 {
     margin-bottom: 12px;
   }
+
+  h4 {
+    @include ellipsis;
+  }
 }
 
 .accordion__item--is-active {
