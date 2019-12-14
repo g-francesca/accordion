@@ -1,13 +1,8 @@
-:root {
-  // line-height
-  --heading-line-height: 1.2;
-  --body-line-height: 1.4;
-}
-
 body {
   font-size: var(--text-base-size, 1em);
   font-family: var(--font-primary, sans-serif);
   color: var(--color-contrast-high, hsl(240, 4%, 20%));
+  background-color: var(--color-bg-secondary);
 }
 
 h1, h2, h3, h4 {
@@ -28,12 +23,14 @@ h2, .text-xl {
   font-size: var(--text-xl, 1.728em);
 }
 
-h3, .text-lg {
+h3 {
   font-size: var(--text-lg, 1.44em);
+  color: var(--color-text-highlight);
 }
 
-h4, .text-md {
+h4 {
   font-size: var(--text-md, 1.2em);
+  color: var(--color-text-secondary);
 }
 
 .text-base {

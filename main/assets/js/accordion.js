@@ -11,6 +11,7 @@ class Accordion {
     const UI_titleWrapper = document.createElement('h2');
     const UI_titleContent = document.createTextNode(title);
     UI_titleWrapper.appendChild(UI_titleContent);
+    UI_titleWrapper.classList.add('accordion__title');
 
     wrapper.appendChild(UI_titleWrapper);
   }
@@ -21,9 +22,10 @@ class Accordion {
     const UI_PanelsWrapper = document.createElement('ul');
     
     items.forEach(({ title, subtitle, content }) => {
-      if (!title && !content) return null
+      if (!title || !content) return null
 
       const UI_PanelWrapper = document.createElement('li');
+      UI_PanelWrapper.classList.add('accordion__item');
 
       // create and add title <h3>
       const UI_PanelTitleWrapper = document.createElement('h3');
@@ -33,11 +35,11 @@ class Accordion {
       // create and add content wrapper
       const UI_PanelContentWrapper = document.createElement('div');
       UI_PanelContentWrapper.insertAdjacentHTML('beforeend', content);
-      UI_PanelContentWrapper.classList.add('accordion__content');
+      UI_PanelContentWrapper.classList.add('accordion__item__content');
 
       // create heading wrapper
       const UI_PanelHeaderWrapper = document.createElement('header');
-      UI_PanelHeaderWrapper.classList.add('accordion__header');
+      UI_PanelHeaderWrapper.classList.add('accordion__item__header');
 
       // append title to its wrapper
       UI_PanelHeaderWrapper.appendChild(UI_PanelTitleWrapper)
@@ -66,7 +68,7 @@ class Accordion {
   }
 
   handleClick() {
-    this.parentElement.classList.toggle('accordion--is-active');
+    this.parentElement.classList.toggle('accordion__item--is-active');
   }
 
   createAccordion() {

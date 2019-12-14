@@ -1,4 +1,8 @@
-[data-theme] {
-  background-color: var(--color-bg, hsl(0, 0%, 100%));
-  color: var(--color-contrast-high, hsl(240, 4%, 20%));
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-teriary: #333333;
+  --color-text-primary: #000000;
+  --color-text-secondary: #999999;
+  --color-text-highlight: #0465ac;
 }
