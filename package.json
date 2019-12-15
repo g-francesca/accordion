@@ -3,22 +3,6 @@
   "version": "2.2.3",
   "description": "Demo accordion.",
   "main": "index.js",
-  "keywords": [
-    "scss",
-    "css",
-    "framework",
-    "design-system",
-    "html",
-    "front-end",
-    "buttons",
-    "colors",
-    "forms",
-    "grid",
-    "mixins",
-    "spacing",
-    "typography",
-    "codyhouse"
-  ],
   "scripts": {
     "gulp": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
