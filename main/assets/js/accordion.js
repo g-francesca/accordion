@@ -5,7 +5,7 @@ class Accordion {
     this.panels = panels;
   }
 
-  createAccordionElement(element, parent) {
+  _createAccordionElement(element, parent) {
     if (!element) return null
 
     const { htmlTag, content, className } = element;
@@ -21,19 +21,19 @@ class Accordion {
     return UI_wrapper;
   }
 
-  createMainTitle(accordion) {
-    return this.createAccordionElement({ 
+  _createMainTitle(accordion) {
+    return this._createAccordionElement({ 
       htmlTag: 'h2',
       content: this.mainTitle,
       className: 'accordion__title'
     }, accordion);
   }
 
-  createPanels(items, accordion) {
+  _createPanels(items, accordion) {
     if (!items) return null
 
     // create list of items
-    const UI_itemsList = this.createAccordionElement({ 
+    const UI_itemsList = this._createAccordionElement({ 
       htmlTag: 'ul',
       content: '',
     }, accordion);
@@ -43,27 +43,27 @@ class Accordion {
       if (!title || !content) return null
 
       // add item
-      const UI_item = this.createAccordionElement({ 
+      const UI_item = this._createAccordionElement({ 
         htmlTag: 'li',
         content: '',
         className: 'accordion__item'
       }, UI_itemsList);
 
       // add item head
-      const UI_itemHeader = this.createAccordionElement({ 
+      const UI_itemHeader = this._createAccordionElement({ 
         htmlTag: 'header',
         content: '',
         className: 'accordion__item__header'
       }, UI_item);
 
       // add title to item head
-      this.createAccordionElement({ 
+      this._createAccordionElement({ 
         htmlTag: 'h3',
         content: title,
       }, UI_itemHeader);
 
       // add icon to item head
-      this.createAccordionElement({ 
+      this._createAccordionElement({ 
         htmlTag: 'i',
         content: 'keyboard_arrow_down',
         className: 'material-icons'
@@ -71,14 +71,14 @@ class Accordion {
       
       // add subtitle to item head
       if ( subtitle ) {
-        this.createAccordionElement({ 
+        this._createAccordionElement({ 
           htmlTag: 'h4',
           content: subtitle,
         }, UI_itemHeader);
       }
 
       // add item content
-      const UI_itemContent = this.createAccordionElement({ 
+      const UI_itemContent = this._createAccordionElement({ 
         htmlTag: 'div',
         content: '',
         className: 'accordion__item__content'
@@ -88,21 +88,21 @@ class Accordion {
     });
   }
 
-  createAccordion(accordion) {    
-    this.createMainTitle(accordion);
-    this.createPanels(this.panels, accordion);
+  _createAccordion(accordion) {    
+    this._createMainTitle(accordion);
+    this._createPanels(this.panels, accordion);
   }
 
-  toggleClass() {
+  _toggleClass() {
     this.parentElement.classList.toggle('accordion__item--is-active');
   }
 
-  handleClick(accordion) {
+  _handleClick(accordion) {
     const UI_accordionItems = accordion.querySelectorAll('li');
     
     UI_accordionItems.forEach(item => {
       const header = item.querySelector('header');
-      header.addEventListener('click', this.toggleClass);
+      header.addEventListener('click', this._toggleClass);
     })
   }
 
@@ -110,7 +110,7 @@ class Accordion {
     console.log('[ACCORDION] initialized');
     const UI_accordion = document.getElementById(this.container);
     
-    this.createAccordion(UI_accordion);
-    this.handleClick(UI_accordion);
+    this._createAccordion(UI_accordion);
+    this._handleClick(UI_accordion);
   }
 };
