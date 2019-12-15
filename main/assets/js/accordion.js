@@ -28,14 +28,14 @@ class Accordion {
     }, accordion);
   }
 
-  createPanels(items, wrapper) {
+  createPanels(items, accordion) {
     if (!items) return null
 
     // create list of items
     const UI_itemsList = this.createAccordionElement({ 
       htmlTag: 'ul',
       content: '',
-    }, wrapper);
+    }, accordion);
     
     // iterate through items to populate list
     items.forEach(({ title, subtitle, content }) => {
