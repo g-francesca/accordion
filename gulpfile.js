@@ -30,7 +30,6 @@ gulp.task('sass', function() {
   .pipe(browserSync.reload({
     stream: true
   }))
-  .pipe(rename('style-fallback.css'))
   .pipe(postcss([cssvariables(), calc()]))
   .pipe(gulp.dest(cssFolder));
 });

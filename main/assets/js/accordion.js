@@ -14,7 +14,8 @@ class Accordion {
     const UI_content = document.createTextNode(content);
 
     UI_wrapper.appendChild(UI_content);
-    UI_wrapper.classList.add(className);
+
+    if ( className ) UI_wrapper.classList.add(className);
 
     parent.appendChild(UI_wrapper);
     return UI_wrapper;

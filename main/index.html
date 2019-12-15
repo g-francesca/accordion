@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="assets/css/accordion.css"> -->
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="text/javascript" src='assets/js/accordion.js'></script>
   <title>Accordion</title>
@@ -18,7 +19,16 @@
   </header>
   <main>
     <div class="container">
-      <div id="my-accordion" class='accordion'></div>
+      <div class="grid grid-gap">
+          <div class="col col-12 col-8-md">
+            <div id="my-accordion" class='accordion'></div>
+          </div>
+          <div class="col col-4">
+            <div class="box-test">
+              <h2>Box used to test grid...</h2>
+            </div>
+          </div>
+      </div>
     </div>
   </main>
   
