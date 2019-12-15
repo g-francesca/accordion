@@ -55,6 +55,27 @@ class Accordion {
         className: 'accordion__item__header'
       }, UI_item);
 
+      // add title to item head
+      this.createAccordionElement({ 
+        htmlTag: 'h3',
+        content: title,
+      }, UI_itemHeader);
+
+      // add icon to item head
+      this.createAccordionElement({ 
+        htmlTag: 'i',
+        content: 'keyboard_arrow_down',
+        className: 'material-icons'
+      }, UI_itemHeader);
+      
+      // add subtitle to item head
+      if ( subtitle ) {
+        this.createAccordionElement({ 
+          htmlTag: 'h4',
+          content: subtitle,
+        }, UI_itemHeader);
+      }
+
       // add item content
       const UI_itemContent = this.createAccordionElement({ 
         htmlTag: 'div',
@@ -63,24 +84,6 @@ class Accordion {
       }, UI_item);
 
       UI_itemContent.insertAdjacentHTML('beforeend', content);
-
-      this.createAccordionElement({ 
-        htmlTag: 'h3',
-        content: title,
-      }, UI_itemHeader);
-
-      this.createAccordionElement({ 
-        htmlTag: 'i',
-        content: 'keyboard_arrow_down',
-        className: 'material-icons'
-      }, UI_itemHeader);
-      
-      if ( subtitle ) {
-        this.createAccordionElement({ 
-          htmlTag: 'h4',
-          content: subtitle,
-        }, UI_itemHeader);
-      }
     });
   }
 
