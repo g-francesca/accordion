@@ -30,16 +30,6 @@ p {
   font-size: 13px;
 }
 
-small, .text-sm {
-  font-size: var(--text-sm, 0.833em);
-}
-
-// inline text
-a, .link {
-  color: var(--color-primary, hsl(220, 81%, 59%));
-  text-decoration: underline;
-}
-
 strong {
   font-weight: bold;
 }

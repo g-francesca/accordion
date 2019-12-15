@@ -5,3 +5,5 @@ Once you have cloned the repositiory or downloaded the source files, you can run
 npm install
 npm run gulp
 ```
+
+Now you can visit `localhost:3000'
