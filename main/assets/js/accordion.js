@@ -87,25 +87,29 @@ class Accordion {
     });
   }
 
-  handleClick() {
+  createAccordion(accordion) {    
+    this.createMainTitle(accordion);
+    this.createPanels(this.panels, accordion);
+  }
+
+  toggleClass() {
     this.parentElement.classList.toggle('accordion__item--is-active');
   }
 
-  createAccordion() {
-    const UI_accordion = document.getElementById(this.container);
+  handleClick(accordion) {
+    const UI_accordionItems = accordion.querySelectorAll('li');
     
-    this.createMainTitle(UI_accordion);
-    this.createPanels(this.panels, UI_accordion)
-
-    const UI_accordionItems = UI_accordion.querySelectorAll('li');
     UI_accordionItems.forEach(item => {
       const header = item.querySelector('header');
-      header.addEventListener('click', this.handleClick);
+      header.addEventListener('click', this.toggleClass);
     })
   }
 
   init() {
-    console.log('[ACCORDION] initialized')
-    this.createAccordion();
+    console.log('[ACCORDION] initialized');
+    const UI_accordion = document.getElementById(this.container);
+    
+    this.createAccordion(UI_accordion);
+    this.handleClick(UI_accordion);
   }
 };
