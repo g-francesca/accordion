@@ -1,2 +1,66 @@
 @import 'abstracts';
-@import 'modules/accordion';
+
+.accordion {
+  margin: 60px 0;
+}
+
+.accordion__title {
+  padding: 18px;
+  background-color: var(--color-bg-primary);
+  box-shadow: var(--shadow);
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--color-border-primary);
+  border-top: 1px solid var(--color-border-primary);
+  transition: all .3s var(--ease-in-out);
+  background-color: var(--color-bg-primary);
+  box-shadow: var(--shadow);
+}
+
+.accordion__item__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all .3s var(--ease-in-out);
+  padding: 0 25px;
+}
+
+.accordion__item__header {
+  padding: 25px 60px 25px 25px;
+  cursor: pointer;
+  position: relative;
+
+  h4 {
+    @include ellipsis;
+    margin-top: 12px;
+  }
+
+  .material-icons {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    transform: rotate(0);
+    transition: all .3s var(--ease-in-out);
+    font-size: 26px;
+    color: var(--color-text-highlight);
+  }
+}
+
+.accordion__item--is-active {
+  margin: 30px 0;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+
+  .accordion__item__content {
+    max-height: 500px;
+    opacity: 1;
+    padding-bottom: 25px;
+  }
+
+  .accordion__item__header {
+    .material-icons {
+      transform: rotate3d(1, 0, 0, 180deg);
+    }
+  }
+}
